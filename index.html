@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomemo - 飲んだお酒を忘れない</title>
+  <meta name="description" content="Nomemoは、飲んだお酒の銘柄を3秒で記録できるアプリです。日本酒・ワイン・ビール・焼酎・ウイスキーに対応。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', -apple-system, sans-serif;
+      color: #1A1A1A;
+      background: #FAFAF8;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #E06830 0%, #F5A623 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .hero-logo {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .hero-tagline {
+      font-size: 20px;
+      font-weight: 500;
+      opacity: 0.95;
+      margin-bottom: 12px;
+    }
+    .hero-sub {
+      font-size: 15px;
+      opacity: 0.85;
+      max-width: 400px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+    }
+    /* Features */
+    .features {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #1A1A1A;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .feature-emoji {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .feature-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-desc {
+      font-size: 13px;
+      color: #4A4A4A;
+      line-height: 1.6;
+    }
+    /* Categories */
+    .categories {
+      background: #fff;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .categories h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .cat-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .cat-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #FAFAF8;
+      border: 1px solid #E5E5EA;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #E06830 0%, #F5A623 100%);
+      color: #fff;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .cta h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .cta p {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+    .cta-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 12px 32px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    /* Footer */
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #8E8E93;
+    }
+    footer a {
+      color: #E06830;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hero { padding: 60px 20px 48px; }
+      .hero-logo { font-size: 36px; }
+      .hero-tagline { font-size: 18px; }
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-logo">Nomemo</div>
+    <div class="hero-tagline">飲んだお酒を忘れない</div>
+    <p class="hero-sub">酔っていても3秒で記録。翌日に「あれ何飲んだっけ？」がなくなるアプリ。</p>
+    <div class="hero-badges">
+      <span class="badge">iOS / Android 対応</span>
+      <span class="badge">Coming Soon</span>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Nomemoでできること</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-emoji">&#x1F4F8;</div>
+        <div class="feature-title">3秒で記録</div>
+        <div class="feature-desc">銘柄を選んで星をつけるだけ。写真やメモも追加できます。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-emoji">&#x1F50D;</div>
+        <div class="feature-title">10万銘柄から検索</div>
+        <div class="feature-desc">日本酒・ワイン・ビール・焼酎・ウイスキーの銘柄DBから即座に検索。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-emoji">&#x1F4CA;</div>
+        <div class="feature-title">飲酒データを分析</div>
+        <div class="feature-desc">カレンダー、評価分布、曜日パターンなど、自分の飲酒傾向を可視化。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-emoji">&#x1F31F;</div>
+        <div class="feature-title">おすすめ銘柄</div>
+        <div class="feature-desc">あなたの好みに合った銘柄をおすすめ。新しい出会いを演出します。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-emoji">&#x1F516;</div>
+        <div class="feature-title">飲みたいリスト</div>
+        <div class="feature-desc">気になる銘柄をブックマーク。お店で迷った時にすぐ確認。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-emoji">&#x1F4E4;</div>
+        <div class="feature-title">SNSシェア</div>
+        <div class="feature-desc">記録をおしゃれなカードにしてInstagram・X・LINEにシェア。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2>対応カテゴリ</h2>
+    <div class="cat-row">
+      <span class="cat-pill">&#x1F376; 日本酒</span>
+      <span class="cat-pill">&#x1F377; ワイン</span>
+      <span class="cat-pill">&#x1F37A; ビール</span>
+      <span class="cat-pill">&#x1F360; 焼酎</span>
+      <span class="cat-pill">&#x1F943; ウイスキー</span>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>まもなくリリース</h2>
+    <p>iOS / Android で無料ダウンロード</p>
+    <span class="cta-badge">Coming Soon</span>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="mailto:support@example.com">お問い合わせ</a>
+    </div>
+    <p>&copy; 2026 Nomemo. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
