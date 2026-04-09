@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブログ｜Nomemo - お酒の記録アプリ</title>
+  <meta name="description" content="Nomemo公式ブログ。お酒の記録・管理に役立つ情報、アプリ比較、おすすめの使い方をお届けします。">
+  <link rel="canonical" href="https://nomemo.net/blog/">
+
+  <meta property="og:title" content="ブログ｜Nomemo - お酒の記録アプリ">
+  <meta property="og:description" content="お酒の記録・管理に役立つ情報、アプリ比較、おすすめの使い方をお届けします。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomemo.net/blog/">
+  <meta property="og:site_name" content="Nomemo">
+  <meta property="og:locale" content="ja_JP">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #E06830;
+      --primary-light: #FFF3E0;
+      --bg: #FAFAF8;
+      --card: #FFFFFF;
+      --ink: #1A1A1A;
+      --charcoal: #4A4A4A;
+      --gray: #8E8E93;
+      --muted: #AEAEB2;
+      --silver: #E5E5EA;
+      --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px;
+      --sp-6: 24px; --sp-7: 28px; --sp-8: 32px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* Header */
+    .header {
+      background: var(--card);
+      border-bottom: 1px solid var(--silver);
+      padding: var(--sp-4);
+    }
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+    .header a {
+      text-decoration: none;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+    .header img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .header-logo {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .header-sep {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .header-section {
+      font-size: 14px;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    /* Content */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px var(--sp-4) 72px;
+    }
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: var(--sp-2);
+    }
+    .page-sub {
+      font-size: 14px;
+      color: var(--charcoal);
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    /* Article cards */
+    .articles {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+    .article-card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--silver);
+      border-radius: 12px;
+      padding: var(--sp-6);
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .article-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 2px 12px rgba(224,104,48,.08);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      margin-bottom: var(--sp-3);
+    }
+    .article-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--primary-light);
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+    .article-date {
+      font-size: 12px;
+      color: var(--gray);
+    }
+    .article-card h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .article-card p {
+      font-size: 14px;
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--silver);
+      padding: var(--sp-8) var(--sp-4);
+      text-align: center;
+    }
+    .ft-logo {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 2px;
+      margin-bottom: var(--sp-4);
+    }
+    .ft-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--sp-5);
+      margin-bottom: var(--sp-3);
+    }
+    .ft-links a {
+      font-size: 12px;
+      color: var(--gray);
+      text-decoration: none;
+    }
+    .ft-links a:hover { color: var(--primary); }
+    .ft-copy { font-size: 11px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../">
+        <img src="../images/app_icon.png" alt="Nomemo" width="32" height="32">
+        <span class="header-logo">Nomemo</span>
+      </a>
+      <span class="header-sep">/</span>
+      <span class="header-section">ブログ</span>
+    </div>
+  </header>
+
+  <main class="content">
+    <h1 class="page-title">ブログ</h1>
+    <p class="page-sub">お酒の記録・管理に役立つ情報をお届けします。</p>
+
+    <div class="articles">
+      <a href="vinica-alternative.html" class="article-card">
+        <div class="article-meta">
+          <span class="article-tag">比較記事</span>
+          <span class="article-date">2026.04.08</span>
+        </div>
+        <h2>Vinica終了後のワイン記録アプリおすすめ5選【2026年版】</h2>
+        <p>2025年10月にサービス終了したVinicaの代替として使えるワイン記録アプリを徹底比較。機能・対応ジャンル・料金で選ぶならどれ？</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="ft-logo">Nomemo</div>
+    <div class="ft-links">
+      <a href="../">トップ</a>
+      <a href="../privacy.html">プライバシーポリシー</a>
+      <a href="../terms.html">利用規約</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="mailto:support@nomemo.net">お問い合わせ</a>
+    </div>
+    <p class="ft-copy">&copy; 2026 Nomemo. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

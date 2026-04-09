@@ -28,7 +28,7 @@
     "headline": "Vinica終了後のワイン記録アプリおすすめ5選｜移行先を徹底比較【2026年】",
     "description": "Vinica（ビニカ）が2025年10月にサービス終了。代替アプリ5つを機能・対応ジャンル・日本語対応の観点で徹底比較。",
     "datePublished": "2026-04-08",
-    "dateModified": "2026-04-08",
+    "dateModified": "2026-04-09",
     "author": { "@type": "Organization", "name": "Nomemo" },
     "publisher": { "@type": "Organization", "name": "Nomemo", "url": "https://nomemo.net" }
   }
@@ -184,17 +184,124 @@
       padding: 24px;
       margin-bottom: 20px;
     }
-    .app-card h3 {
+    .app-card-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .app-icon img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
+    .app-card-head h3 {
       margin-top: 0;
-      margin-bottom: 8px;
+      margin-bottom: 2px;
     }
     .app-meta {
       font-size: 13px;
       color: var(--gray);
-      margin-bottom: 12px;
+      margin-bottom: 0;
     }
+    .app-card > .app-meta { margin-bottom: 12px; }
     .app-pros { color: var(--primary); font-weight: 600; font-size: 14px; }
     .app-cons { color: var(--gray); font-weight: 600; font-size: 14px; }
+    .app-store-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .app-store-link:hover { text-decoration: underline; }
+
+    /* Nomemo detail section */
+    .nomemo-detail {
+      background: var(--primary-light);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 32px 24px;
+      margin: 32px 0;
+    }
+    .nomemo-detail h3 {
+      margin-top: 0;
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .nomemo-detail p {
+      color: var(--charcoal);
+    }
+    .nomemo-screens {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin: 24px 0;
+    }
+    .nomemo-screen {
+      text-align: center;
+    }
+    .nomemo-screen-phone {
+      width: 160px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.04);
+      aspect-ratio: 9 / 17;
+      margin: 0 auto 8px;
+    }
+    .nomemo-screen-phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 8%;
+      display: block;
+    }
+    .nomemo-screen-cap {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .nomemo-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .nomemo-feat {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .nomemo-feat span {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 480px) {
+      .nomemo-screens { flex-direction: column; align-items: center; gap: 24px; }
+      .nomemo-screen-phone { width: 180px; }
+      .nomemo-features { grid-template-columns: 1fr; }
+    }
 
     /* CTA */
     .cta-box {
@@ -266,7 +373,10 @@
 <body>
 
   <header class="header">
-    <a href="/">Nomemo</a>
+    <a href="/" style="display:inline-flex;align-items:center;gap:8px;">
+      <img src="../images/app_icon.png" alt="Nomemo" width="28" height="28" style="border-radius:7px;">
+      <span>Nomemo</span>
+    </a>
   </header>
 
   <nav class="breadcrumb">
@@ -302,46 +412,46 @@
           <tr>
             <th>アプリ名</th>
             <th>対応ジャンル</th>
+            <th>銘柄DB</th>
             <th>日本語</th>
             <th>料金</th>
-            <th>特徴</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>Vivino</strong></td>
-            <td>ワインのみ</td>
-            <td>一部対応</td>
-            <td>無料（有料あり）</td>
-            <td>世界最大。ラベル認識あり</td>
-          </tr>
           <tr class="highlight-row">
             <td><strong>Nomemo</strong></td>
             <td>全ジャンル</td>
+            <td>10万以上</td>
             <td>完全対応</td>
             <td>無料（Premium有料）</td>
-            <td>全酒類横断。10万銘柄DB</td>
+          </tr>
+          <tr>
+            <td><strong>Vivino</strong></td>
+            <td>ワインのみ</td>
+            <td>1,600万本</td>
+            <td>一部対応</td>
+            <td>無料（有料あり）</td>
           </tr>
           <tr>
             <td><strong>飲みログ</strong></td>
             <td>全ジャンル</td>
+            <td>少なめ</td>
             <td>完全対応</td>
             <td>無料</td>
-            <td>味覚レーダー評価</td>
           </tr>
           <tr>
             <td><strong>ワインコレクション</strong></td>
             <td>ワインのみ</td>
+            <td>非公開</td>
             <td>完全対応</td>
             <td>無料（Pro有料）</td>
-            <td>セラー管理・飲み頃通知</td>
           </tr>
           <tr>
             <td><strong>Untappd</strong></td>
             <td>ビール中心→拡大中</td>
+            <td>多い</td>
             <td>英語中心</td>
             <td>無料（有料あり）</td>
-            <td>SNS機能が強い</td>
           </tr>
         </tbody>
       </table>
@@ -349,58 +459,127 @@
 
     <h2>各アプリの詳細レビュー</h2>
 
-    <div class="app-card">
-      <h3>1. Vivino - 世界最大のワインアプリ</h3>
-      <p class="app-meta">対応：ワインのみ ／ 6,500万ユーザー ／ iOS・Android</p>
-      <p>世界最大のワインアプリ。ラベルをカメラで撮影するだけでワインを特定でき、世界中のユーザーの評価やレビューを参照できます。購入もアプリ内で可能。<strong>Vinicaの「ラベル認識」機能に最も近い体験</strong>ができるアプリです。</p>
-      <p class="app-pros">良い点：ラベル認識の精度が高い。世界最大のワインDB</p>
-      <p class="app-cons">気になる点：日本語対応が不完全。日本のワイン情報が少ない。ワイン以外は記録できない</p>
-    </div>
-
     <div class="app-card" style="border-color: var(--primary);">
-      <h3>2. Nomemo - 全ジャンル対応のお酒記録アプリ</h3>
-      <p class="app-meta">対応：日本酒・ワイン・ビール・焼酎・ウイスキー・カクテル・チューハイ ／ iOS・Android</p>
-      <p>ワインだけでなく、日本酒・ビール・焼酎・ウイスキーなど<strong>全ジャンルのお酒を1つのアプリで記録</strong>できるのが最大の特徴。10万銘柄以上のデータベースから検索して、星評価・写真・メモで記録します。</p>
-      <p>飲酒傾向の分析機能や、記録するたびに育つキャラクター「ノメモン」など、記録を楽しく続けられる仕組みがあります。<strong>日本語完全対応</strong>で、日本のお酒の銘柄情報が充実しています。</p>
-      <p>Vinicaとの違いは、ワイン以外のお酒も横断的に記録できること。「居酒屋で日本酒もワインもビールも飲んだ」という場面でも、すべて1つのアプリで完結します。</p>
-      <p class="app-pros">良い点：全ジャンル対応。日本語ネイティブ。5秒で記録できる手軽さ。ゲーミフィケーション</p>
-      <p class="app-cons">気になる点：ラベル自動認識は非搭載（銘柄検索で記録）</p>
+      <div class="app-card-head">
+        <div class="app-icon"><img src="../images/app_icon.png" alt="Nomemoアイコン" width="48" height="48"></div>
+        <div>
+          <h3>1. Nomemo - 全ジャンル対応のお酒記録アプリ <span style="background:var(--primary);color:#fff;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:600;vertical-align:middle;">おすすめ</span></h3>
+          <p class="app-meta">対応：全7ジャンル ／ 10万銘柄 ／ iOS（Android近日公開）</p>
+        </div>
+      </div>
+      <p>ラベル認識こそないものの、それ以外のほぼすべての面でバランスが良いアプリです。<strong>10万銘柄のデータベース、日本語完全対応、全ジャンル横断、5秒で記録できるUI</strong>と、Vinicaユーザーが求める条件を最も多くカバーしています。</p>
+      <p>ワインだけでなく日本酒・ビール・焼酎・ウイスキーなど全ジャンルを1つのアプリで記録でき、飲酒傾向の分析機能やキャラクター育成「ノメモン」など、<strong>記録を続けたくなる仕組み</strong>が充実しています。</p>
+      <p class="app-pros">良い点：全ジャンル対応。10万銘柄DB。日本語ネイティブ。5秒で記録。飲酒データ分析。ゲーミフィケーション</p>
+      <p class="app-cons">気になる点：ラベル自動認識は非搭載（銘柄名で検索して記録する方式）</p>
+      <a href="https://apps.apple.com/jp/app/%E3%81%8A%E9%85%92%E3%81%AE%E8%A8%98%E9%8C%B2%E5%B8%B3-nomemo-%E6%97%A5%E6%9C%AC%E9%85%92-%E3%83%AF%E3%82%A4%E3%83%B3-%E3%83%93%E3%83%BC%E3%83%AB-%E7%84%BC%E9%85%8E/id6759994165" class="app-store-link" target="_blank" rel="noopener">App Storeで無料ダウンロード &rarr;</a>
     </div>
 
     <div class="app-card">
-      <h3>3. 飲みログ - ラベル自動切り出し対応</h3>
-      <p class="app-meta">対応：全ジャンル ／ iOS・Android</p>
+      <div class="app-card-head">
+        <div class="app-icon" style="background: #7B2D8E;">V</div>
+        <div>
+          <h3>2. Vivino - 世界最大のワインアプリ</h3>
+          <p class="app-meta">対応：ワインのみ ／ 6,500万ユーザー ／ iOS・Android</p>
+        </div>
+      </div>
+      <p>世界最大のワインアプリ。ラベルをカメラで撮影するだけでワインを特定でき、世界中のユーザーの評価やレビューを参照できます。購入もアプリ内で可能。<strong>Vinicaの「ラベル認識」機能に最も近い体験</strong>ができるアプリです。</p>
+      <p class="app-pros">良い点：ラベル認識の精度が高い。世界最大のワインDB（1,600万本）</p>
+      <p class="app-cons">気になる点：UIが英語ベースで日本語対応が不完全。日本の国産ワインや日本酒の情報はほぼなし。ワイン以外は一切記録できない</p>
+      <a href="https://apps.apple.com/app/vivino-wine-scanner/id414461255" class="app-store-link" target="_blank" rel="noopener">App Storeで見る &rarr;</a>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-head">
+        <div class="app-icon" style="background: #4CAF50;">飲</div>
+        <div>
+          <h3>3. 飲みログ - ラベル自動切り出し対応</h3>
+          <p class="app-meta">対応：全ジャンル ／ iOS・Android</p>
+        </div>
+      </div>
       <p>お酒のラベルを撮影すると自動で切り出してくれる機能が特徴。味覚レーダーチャートで味の傾向を細かく記録できます。全ジャンルのお酒に対応しており、カジュアルに使えるアプリです。</p>
-      <p class="app-pros">良い点：ラベル自動切り出し。味覚の詳細評価</p>
-      <p class="app-cons">気になる点：銘柄データベースがやや小さい</p>
+      <p class="app-pros">良い点：ラベル自動切り出し。味覚の詳細評価。日本語対応</p>
+      <p class="app-cons">気になる点：銘柄データベースが小さく、検索してもヒットしないことがある。データ分析機能が限定的</p>
+      <a href="https://apps.apple.com/jp/app/%E9%A3%B2%E3%81%BF%E3%83%AD%E3%82%B0-%E3%81%8A%E9%85%92%E3%82%92%E8%A8%98%E9%8C%B2%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA/id1534787275" class="app-store-link" target="_blank" rel="noopener">App Storeで見る &rarr;</a>
     </div>
 
     <div class="app-card">
-      <h3>4. ワインコレクション - セラー管理に強い</h3>
-      <p class="app-meta">対応：ワインのみ ／ iOS・Android</p>
+      <div class="app-card-head">
+        <div class="app-icon" style="background: #8B1A2B;">W</div>
+        <div>
+          <h3>4. ワインコレクション - セラー管理に強い</h3>
+          <p class="app-meta">対応：ワインのみ ／ iOS・Android</p>
+        </div>
+      </div>
       <p>ワインのセラー管理に特化したアプリ。手持ちのワインの管理や、飲み頃の通知機能があります。ワインを「記録」するだけでなく「管理」したい方に向いています。日本語完全対応。</p>
       <p class="app-pros">良い点：セラー管理・飲み頃通知。日本語対応</p>
-      <p class="app-cons">気になる点：ワイン以外は記録できない。Pro版は有料</p>
+      <p class="app-cons">気になる点：ワイン以外は一切記録できない。記録を楽しむというよりセラー管理ツール。Pro版は有料</p>
+      <a href="https://apps.apple.com/jp/app/%E3%83%AF%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%AF%E3%82%A4%E3%83%B3%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88/id589442082" class="app-store-link" target="_blank" rel="noopener">App Storeで見る &rarr;</a>
     </div>
 
     <div class="app-card">
-      <h3>5. Untappd - ビール中心から全酒類に拡大中</h3>
-      <p class="app-meta">対応：ビール中心（ワイン・スピリッツに拡大中） ／ Android 500万DL以上</p>
+      <div class="app-card-head">
+        <div class="app-icon" style="background: #FFC107; color: #1A1A1A;">U</div>
+        <div>
+          <h3>5. Untappd - ビール中心から全酒類に拡大中</h3>
+          <p class="app-meta">対応：ビール中心（ワイン・スピリッツに拡大中） ／ Android 500万DL以上</p>
+        </div>
+      </div>
       <p>もともとビール記録アプリとして世界的に人気でしたが、2025年にワインやスピリッツなど900カテゴリ以上に拡大。SNS機能が強く、友人と飲んだビールをシェアする文化があります。</p>
       <p class="app-pros">良い点：SNS・コミュニティ機能が充実。カテゴリ拡大中</p>
-      <p class="app-cons">気になる点：英語中心。日本語の銘柄情報が少ない</p>
+      <p class="app-cons">気になる点：ほぼ英語のみ。日本の銘柄情報が少なく、日本酒・焼酎はほとんどカバーされていない</p>
+      <a href="https://apps.apple.com/app/untappd-discover-beer/id449141888" class="app-store-link" target="_blank" rel="noopener">App Storeで見る &rarr;</a>
     </div>
 
     <h2>結局どれを選べばいい？</h2>
-    <p>用途に応じたおすすめを整理します。</p>
+    <p>正直なところ、<strong>ラベル認識を重視するかどうか</strong>が分かれ目です。</p>
+    <p>ラベルを撮って自動認識させたいならVivino一択。ただしそれ以外の条件 ― 日本語対応、銘柄DBの充実度、対応ジャンルの広さ、記録の手軽さ、データ分析 ― では<strong>Nomemoが最もバランスよくカバー</strong>しています。</p>
     <ul>
-      <li><strong>ワインだけを本格的に記録したい</strong> → <strong>Vivino</strong>。世界最大のDBとラベル認識が強い</li>
-      <li><strong>ワインも日本酒もビールも記録したい</strong> → <strong>Nomemo</strong>。全ジャンル横断で日本語完全対応</li>
-      <li><strong>ラベル写真の自動認識が欲しい</strong> → <strong>飲みログ</strong>。ラベル切り出し機能あり</li>
-      <li><strong>ワインのセラー管理をしたい</strong> → <strong>ワインコレクション</strong>。飲み頃通知が便利</li>
-      <li><strong>友人とのSNS共有が大事</strong> → <strong>Untappd</strong>。コミュニティ機能が充実</li>
+      <li><strong>ラベル認識が絶対に必要</strong> → <strong>Vivino</strong>（ただし日本語が弱い点は覚悟）</li>
+      <li><strong>ラベル認識より、日本語で手軽に記録したい</strong> → <strong>Nomemo</strong></li>
+      <li><strong>ラベル切り出し+味覚の詳細評価がしたい</strong> → <strong>飲みログ</strong></li>
+      <li><strong>ワインのセラー管理が主目的</strong> → <strong>ワインコレクション</strong></li>
+      <li><strong>英語OK、海外の友人とシェアしたい</strong> → <strong>Untappd</strong></li>
     </ul>
-    <p>Vinicaの「手軽にワインを記録する」体験に最も近いのはVivino。ただしワイン以外も飲む方、日本語での使いやすさを重視する方は、全ジャンル対応のNomemoや飲みログも検討してみてください。</p>
+    <p>迷ったらまずNomemoを試してみるのがおすすめです。無料で始められて、ワイン以外のお酒もまとめて記録できるので、「とりあえず入れておく」一本として使いやすいアプリです。</p>
+
+    <!-- Nomemo deep-dive -->
+    <h2>Nomemoを使うとどうなる？</h2>
+    <div class="nomemo-detail">
+      <p>実際の画面で、Vinicaから乗り換えた後の体験をイメージしてみてください。</p>
+
+      <div class="nomemo-screens">
+        <div class="nomemo-screen">
+          <div class="nomemo-screen-phone">
+            <img src="../images/screenshot_1.png" alt="コレクション画面：十四代、Coeur de Raisin、村尾など飲んだお酒の記録一覧" width="390" height="844" loading="lazy">
+          </div>
+          <p class="nomemo-screen-cap">飲んだお酒が全部残る</p>
+        </div>
+        <div class="nomemo-screen">
+          <div class="nomemo-screen-phone">
+            <img src="../images/screenshot_3.png" alt="記録画面：カテゴリ選択、銘柄名、写真、星5段階評価" width="390" height="844" loading="lazy">
+          </div>
+          <p class="nomemo-screen-cap">酔ってても5秒で記録</p>
+        </div>
+        <div class="nomemo-screen">
+          <div class="nomemo-screen-phone">
+            <img src="../images/screenshot_5.png" alt="データ分析画面：カレンダー、月別記録数、曜日別パターン" width="390" height="844" loading="lazy">
+          </div>
+          <p class="nomemo-screen-cap">自分の好みが見えてくる</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:24px;">Vinicaユーザーに嬉しいポイント</h3>
+      <div class="nomemo-features">
+        <div class="nomemo-feat">10万銘柄DB<span>ワインも日本酒もすぐ見つかる</span></div>
+        <div class="nomemo-feat">5秒で記録<span>酔っていても迷わないUI</span></div>
+        <div class="nomemo-feat">全7ジャンル対応<span>ワインも日本酒も1アプリで</span></div>
+        <div class="nomemo-feat">飲酒データ分析<span>カレンダー・好み傾向を可視化</span></div>
+        <div class="nomemo-feat">ノメモン育成<span>記録するほどキャラが成長</span></div>
+        <div class="nomemo-feat">日本語完全対応<span>日本の銘柄情報が充実</span></div>
+      </div>
+
+      <p>Vinicaで不満だった「ワインしか記録できない」が解消されます。居酒屋でワインと日本酒を飲んでも、バーでウイスキーを飲んでも、<strong>全部同じアプリに残る</strong>。記録が溜まるほど「自分はこういうお酒が好きなんだ」が見えてきて、次の一杯を選ぶのがもっと楽しくなります。</p>
+    </div>
 
     <div class="cta-box">
       <h3>Nomemoを試してみる</h3>
